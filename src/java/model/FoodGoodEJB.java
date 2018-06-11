@@ -32,5 +32,22 @@ public class FoodGoodEJB {
     }
     
     
+        public void altaDish(Dish d) throws FoodGoodExceptions{
+        EntityManager em = emf.createEntityManager();
+        Dish aux = em.find(Dish.class, d.getName());
+        if(aux !=null){
+            em.close();
+            throw new FoodGoodExceptions("Ya existe un plato con el mismo nombre");
+        }
+        em.persist(d);
+        em.close();
+    }
+    
+    public List<Dish> listadoDish(){
+        return emf.createEntityManager().createNamedQuery("Dish.findAll").getResultList();
+    
+    }
+    
+    
     
 }
