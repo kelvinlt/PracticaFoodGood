@@ -28,11 +28,9 @@ public class FoodGoodEJB {
     
     public List<User> listadoUser(){
         return emf.createEntityManager().createNamedQuery("User.findAll").getResultList();
-    
     }
     
-    
-        public void altaDish(Dish d) throws FoodGoodExceptions{
+    public void altaDish(Dish d) throws FoodGoodExceptions{
         EntityManager em = emf.createEntityManager();
         Dish aux = em.find(Dish.class, d.getName());
         if(aux !=null){
@@ -45,9 +43,6 @@ public class FoodGoodEJB {
     
     public List<Dish> listadoDish(){
         return emf.createEntityManager().createNamedQuery("Dish.findAll").getResultList();
-    
     }
-    
-    
     
 }

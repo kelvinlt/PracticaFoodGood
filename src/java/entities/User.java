@@ -29,7 +29,15 @@ public class User  implements java.io.Serializable {
     public User() {
     }
 
-	
+    public User(String username, String password, String city, String name, String surname, int type) {
+        this.username = username;
+        this.password = password;
+        this.city = city;
+        this.name = name;
+        this.surname = surname;
+        this.type = type;
+    }
+  
     public User(String username, String password, String city, String name, int type) {
         this.username = username;
         this.password = password;
